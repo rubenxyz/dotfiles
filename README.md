@@ -1,5 +1,5 @@
 # dotfiles
 
-'''
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
-'''
+```
+sh -c "`curl -fsSL https://raw.githubusercontent.com/rubensz/dotfiles/master/install.sh `" -s ask
+```
