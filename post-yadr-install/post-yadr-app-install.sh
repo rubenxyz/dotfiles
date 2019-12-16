@@ -17,4 +17,4 @@ brew cask install tor-browser audacity dropbox teamviewer filezilla disk-invento
 #Installs pip apps
 pip3 spotdl
 
-echo "YADR-post-install-awesome-app-bonanza was succesfull."
+echo "Post-yadr-app-install was succesfull."
