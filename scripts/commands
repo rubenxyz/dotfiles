@@ -1,0 +1,67 @@
+
+# EXIFTOOL #
+
+#Remove all exif data
+exiftool -r -all= -ext jpg -ext gif -ext png /path/to/top/directory/
+
+#Write -author tag from foldername
+exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -r /path/to/top/directory/
+
+# FFMPEG #
+Check videofile integrity:
+ffmpeg -v error -i file.avi -f null - 2>error.log
+
+#Merging video and audio, with audio re-encoding
+ffmpeg -i Akira360_nosound.mp4 -i Akira.m4a \
+-c:v copy -c:a aac -strict experimental Akira360.mp4 && ffmpeg -i Akira576_nosound.mp4 -i Akira.m4a \
+-c:v copy -c:a aac -strict experimental Akira576.mp4 && ffmpeg -i Akira720_nosound.mp4 -i Akira.m4a \
+-c:v copy -c:a aac -strict experimental Akira720.mp4 && ffmpeg -i Akira1080_nosound.mp4 -i Akira.m4a \
+-c:v copy -c:a aac -strict experimental Akira1080.mp4 && ffmpeg -i Akira1080_20Mbps_nosound.mp4 -i Akira.m4a \
+-c:v copy -c:a aac -strict experimental Akira1080_20Mbps.mp4
+
+#JOIN AUDIO AND VIDOE
+ffmpeg -i agera.m2v -i agera.wav \
+-c:v copy -c:a aac -strict experimental agera3.mp4
+
+#PRORES TO MP4
+ffmpeg -i prores_auto.mov -vcodec libx264 -pix_fmt yuv420p -acodec libfaac home1.mp4
+
+#Copying the audio without re-encoding
+ffmpeg -i video.mp4 -i audio.wav -c copy output.mkv
+
+#REMOVE SOUND
+ffmpeg -i LuckyOne1080.mp4 -c copy -an LuckyOne1080_nosound.mp4
+ffmpeg -i LuckyOne720.mp4 -c copy -an LuckyOne720_nosound.mp4
+ffmpeg -i LuckyOne576.mp4 -c copy -an LuckyOne576_nosound.mp4
+ffmpeg -i LuckyOne360.mp4 -c copy -an LuckyOne360_nosound.mp4
+ffmpeg -i LuckyOne1080_20mbps.mp4 -c copy -an LuckyOne1080_20mbps_nosound.mp4
+
+#5.1 to MONO 
+ffmpeg -i Kärlek_och_viljan.mov \
+-filter_complex "channelsplit=channel_layout=5.1[FL][FR][FC][LFE][BL][BR]" \
+-map "[FL]" front_left.wav \
+-map "[FR]" front_right.wav \
+-map "[FC]" front_center.wav \
+-map "[LFE]" lfe.wav \
+-map "[BL]" back_left.wav \
+-map "[BR]" back_right.wav
+
+ffmpeg -i Kärlek_och_viljan.mov -filter_complex \
+"[0:a]pan=mono|c0=c0[a0]; \
+ [0:a]pan=mono|c0=c1[a1]; \
+ [0:a]pan=mono|c0=c2[a2]; \
+ [0:a]pan=mono|c0=c3[a3]; \Akira
+ [0:a]pan=mono|c0=c4[a4]; \
+ [0:a]pan=mono|c0=c5[a5]; \
+ [0:a]pan=mono|c0=c6[a6]; \
+ [0:a]pan=mono|c0=c7[a7]; \
+ [0:a]pan=mono|c0=c8[a8]" \
+-map 0 -map -0:a -map "[a0]" -map "[a1]" -map "[a2]" -map "[a3]" \
+-map "[a4]" -map "[a5]" -map "[a6]" -map "[a7]" \
+-map "[a8]" \
+-c copy -c:a pcm_s24le \
+output.mov
+
+
+find ./ -iname "*.docx" -type f -exec sh -c 'pandoc "${0}" -o "${0%.docx}.md"' {} \;
+find ./ -iname "*.xlsx" -type f -exec sh -c 'pandoc "${0}" -o "${0%.xlsx}.csv"' {} \;
