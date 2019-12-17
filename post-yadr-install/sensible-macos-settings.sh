@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#TODO: Fix glitch in top menu bar, show language, set desktop image.
+#TODO: Make set desktop image work
 
 # WARNING - Do not run this script without reading every line (and understanding it)
 
@@ -35,11 +35,11 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
-# Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
-# all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-#rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-#sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-#sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
+# Set a custom wallpaper image.
+#mkdir ~/.ruben
+#wget clone https://raw.githubusercontent.com/rubensz/dotfiles/master/post-yadr-install/desktop.png -O ~/.ruben/desktop.png
+#The line below doesn't work. Didn't get further than this. Any suggestions are welcome. 
+#osascript -e ‘tell application “Finder” to set desktop picture to POSIX file “~/.ruben/desktop.png”’
 
 # Disable menu bar transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
