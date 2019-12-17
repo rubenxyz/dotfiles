@@ -8,7 +8,7 @@ exiftool -r -all= -ext jpg -ext gif -ext png /path/to/top/directory/
 exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -r /path/to/top/directory/
 
 #Add keyword
-exiftool -keywords+=banana -r /path/to/top/directory/
+exiftool -keywords+=banana -r ~/Desktop/creative-ref
 
 # FFMPEG #
 Check videofile integrity:
