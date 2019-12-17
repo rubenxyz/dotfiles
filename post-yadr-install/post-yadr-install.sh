@@ -1,5 +1,5 @@
 #!/bin/bash
-#YADR-POST-INSTALL-SCRIPT
+#POST-YADR-INSTALL-SCRIPT
 #YADR is awesome but this makes it even beter (for me).
 
 ############################
