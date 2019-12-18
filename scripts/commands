@@ -2,13 +2,13 @@
 # EXIFTOOL #
 
 #Remove all exif data
-exiftool -r -all= -ext jpg -ext gif -ext png /path/to/top/directory/
+exiftool -r -all= -ext jpg -ext gif -ext png -overwrite_original ~/Desktop/creative-ref
 
 #Write -author tag from foldername
-exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -r /path/to/top/directory/
+exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -overwrite_original -r ~/Desktop/creative-ref
 
 #Add keyword
-exiftool -keywords+=banana -r ~/Desktop/creative-ref
+exiftool -keywords+=banana -r -overwrite_original ~/Desktop/creative-ref
 
 # FFMPEG #
 Check videofile integrity:
