@@ -1,3 +1,7 @@
+# YOUTUBE-DL #
+
+youtube-dl --yes-playlist -f best -i -v -w -c 
+
 
 # EXIFTOOL #
 
@@ -9,6 +13,7 @@ exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -overwrite_original -
 
 #Add keyword
 exiftool -keywords+=banana -r -overwrite_original
+
 
 # FFMPEG #
 Check videofile integrity:
