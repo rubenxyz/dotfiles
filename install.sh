@@ -14,7 +14,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ################################################################################
 
 #INSTALL YADR
-sh -c "`curl -fsSL https://raw.githubusercontent.com/rubensz/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 
 #Run post-yadr-install script
 sh -c "`curl -fsSL https://raw.githubusercontent.com/rubensz/dotfiles/master/post-yadr-install/yadr-post-install.sh`"
