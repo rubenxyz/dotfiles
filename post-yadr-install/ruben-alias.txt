@@ -1,5 +1,5 @@
 
 #Rubens aliases
-alias wl='youtube-dl --yes-playlist -f 22 -i -v -w -c -o "~/pixel3/Movies/%(playlist_index)s-%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PL
+alias wl='youtube-dl --yes-playlist -f 22 -i -v -w -c -o "~/pixel3/Movies/%(playlist_index)s-%(title)s.%(ext)s"
 alias dlsound='youtube-dl --yes-playlist -f 160 -i -x -v -w -c --audio-quality 6 --audio-format mp3 -o "~/pixel3/Music/new-dl/%(title)s.%(ext)s"'
 alias et='exiftool'
