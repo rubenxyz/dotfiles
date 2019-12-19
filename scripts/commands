@@ -1,8 +1,11 @@
 
 # EXIFTOOL #
 
-#Remove all exif data
-exiftool -r -all= -ext jpg -ext gif -ext png -overwrite_original ~/Desktop/creative-ref
+#Change Adobe Bridge label to keyword.
+exiftool -if "$EXIF:Label# eq '0'" -keywords+=select -r -overwrite_original ~/Desktop/creative-ref
+
+#Remove all exif data, except the keyword "selects"
+exiftool -r -all= -ext jpg -ext gif -ext png -overwrite_original -tagsfromfile @ -keyword:select ~/Desktop/creative-ref
 
 #Write -author tag from foldername
 exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -overwrite_original -r ~/Desktop/creative-ref
