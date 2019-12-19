@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This script installs my "essential" FOSS apps. 
+#This stupidly simple script that installs my "essential" FOSS apps. 
 
 #Runs a update for good mesure.
 brew update
