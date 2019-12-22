@@ -5,15 +5,28 @@ youtube-dl --yes-playlist -f best -i -v -w -c
 
 # EXIFTOOL #
 
-#Remove all exif data, except the Keywords
-exiftool -r -all= -ext jpg -ext gif -ext png -tagsfromfile @ -Keywords -overwrite_original
+#Remove all exif data, except Label
+exiftool -r -all= -ext jpg -ext gif -ext png -tagsfromfile @ -Label 
 
 #Write -author tag from foldername
-exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -overwrite_original -r
+exiftool '-Author<${directory;my @a=split m(/);$_=$a[-1]}' -r -overwrite_original 
 
 #Add keyword
 exiftool -keywords+=banana -r -overwrite_original
 
+# IMAGEMAGICK #
+
+#Converts a single image from JPG to PNG.
+magick convert rose.jpg rose.png
+
+#Converts a single image from JPG to PNG, with more opions
+convert file.jpg -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace sRGB file.jpg
+
+#Find and converts a single image from JPG to PNG, with more opions
+find . -name "*.png" -exec mogrify -format jpg {} \;
+
+#Convert JPG to PNG in subfolders, overwrite original 
+mogrify -sampling-factor 4:2:0 -strip -quality 100 -interlace JPEG -colorspace sRGB *.jpg
 
 # FFMPEG #
 Check videofile integrity:
