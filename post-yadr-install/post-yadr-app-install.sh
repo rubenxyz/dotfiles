@@ -9,7 +9,10 @@ brew update
 brew upgrade
 
 #Intall CLI apps
-brew install mediainfo youtube-dl ffmpeg exiftool python3 buo/cask-upgrade android-platform-tools signify-osx
+brew install mediainfo youtube-dl ffmpeg exiftool python3 android-platform-tools signify-osx
+
+#Instll cask-upgrade package
+brew tap buo/cask-upgrade
 
 #Install GUI apps
 brew cask install tor-browser audacity gimp dropbox teamviewer filezilla disk-inventory-x karabiner-elements aegisub dropbox veracrypt alfred firefox keepassxc virtualbox android-file-transfer vlc appcleaner mediainfo atom google-backup-and-sync osxfuse wickrme avast-security google-chrome thunderbird calibre handbrake transmission syncthing
