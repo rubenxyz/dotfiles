@@ -15,7 +15,7 @@ brew install mediainfo youtube-dl ffmpeg exiftool python3 android-platform-tools
 brew tap buo/cask-upgrade
 
 #Install GUI apps
-brew cask install tor-browser audacity gimp dropbox teamviewer filezilla disk-inventory-x karabiner-elements aegisub dropbox veracrypt alfred firefox keepassxc virtualbox android-file-transfer vlc appcleaner mediainfo atom google-backup-and-sync osxfuse wickrme avast-security google-chrome thunderbird calibre handbrake transmission syncthing
+brew cask install tor-browser audacity gimp dropbox libreoffice teamviewer filezilla disk-inventory-x karabiner-elements aegisub dropbox veracrypt alfred firefox keepassxc virtualbox android-file-transfer vlc appcleaner mediainfo atom google-backup-and-sync osxfuse wickrme avast-security google-chrome thunderbird calibre handbrake transmission syncthing
 
 #Installs pip apps
 pip3 spotdl
