@@ -9,7 +9,7 @@ brew update
 brew upgrade
 
 #Intall CLI apps
-brew install mediainfo youtube-dl ffmpeg exiftool python3 android-platform-tools signify-osx
+brew install mediainfo youtube-dl ffmpeg exiftool python3 android-platform-tools signify-osx ssh-copy-id
 
 #Instll cask-upgrade package
 brew tap buo/cask-upgrade
