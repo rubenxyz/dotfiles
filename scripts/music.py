@@ -134,9 +134,24 @@ print("CHANGED WORKING DIR TO : %s" % os.getcwd())
 #os.system("spotdl --list ~/dotfiles/spotylist/soul-feel-good-downtempo.txt -f /Volumes/Seagate4TB/spoty/soul-feel-good-downtempo/")
 #print("DOWNLOAD COMPLETE")
 
-#/bloomer/core
-os.system("spotdl --playlist https://open.spotify.com/playlist/59jbfdlOBCxxqxdXSAEiQK")
+
+#bloomer
+os.system("spotdl --playlist https://open.spotify.com/playlist/5Kpa0rttkF2AMuDdeqNNSw")
 print("SUCCESFULLY CREATED PLAYLIST FILE")
 print("DOWNLOAD IS INITIATED")
-os.system("spotdl --list ~/dotfiles/spotylist/bloomercore.txt -f /Volumes/Seagate4TB/spoty/bloomercore/")
+os.system("spotdl --list ~/dotfiles/spotylist/(((bloomer))).txt -f /Volumes/Seagate4TB/spoty/(((bloomer)))/")
+print("DOWNLOAD COMPLETE")
+
+#boomer
+os.system("spotdl --playlist https://open.spotify.com/playlist/1IaJAL6La4fmSuvTdrD3z5")
+print("SUCCESFULLY CREATED PLAYLIST FILE")
+print("DOWNLOAD IS INITIATED")
+os.system("spotdl --list ~/dotfiles/spotylist/(((boomer))).txt -f /Volumes/Seagate4TB/spoty/(((boomer)))/")
+print("DOWNLOAD COMPLETE")
+
+#aurora
+os.system("spotdl --playlist https://open.spotify.com/playlist/2QUS9543nzCPjilCmps60Y")
+print("SUCCESFULLY CREATED PLAYLIST FILE")
+print("DOWNLOAD IS INITIATED")
+os.system("spotdl --list ~/dotfiles/spotylist/aurora.txt -f /Volumes/Seagate4TB/spoty/aurora/")
 print("DOWNLOAD COMPLETE")
