@@ -366,6 +366,8 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+# Optimize document update for Skim, the pdf reader
+defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
